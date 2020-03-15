@@ -1,0 +1,14 @@
+.sing-employ{
+    display:flex;
+    border-bottom:1px solid orange;
+    margin-bottom:5px;
+    padding-bottom: 5px;
+    margin-right:10px;
+}
+.sing-img{
+
+}
+.employ-name{
+    color:blue;
+    font-weight:400;
+}

@@ -1,0 +1,18 @@
+.header{
+    margin-top:30px;
+    text-align:center;
+}
+.header nav{
+    background-color: orange;
+    line-height: 40px;
+    font-size: 20px;
+}
+nav a{
+    text-decoration:none;
+    color:white;
+    margin-right:30px;
+    padding:6px;
+}
+nav a:hover{
+    background-color:darkgray;
+}
