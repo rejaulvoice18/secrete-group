@@ -1,6 +1,5 @@
 import React, { useState, useEffect} from 'react';
-//import PostData from './db.json';
-import axios from 'axios';
+//import axios from 'axios';
 import './Secrete.css'
 import Employee from '../Employee/Employee';
 import Summary from '../Summary/Summary';
@@ -15,14 +14,19 @@ const Secrete = () => {
     }
     
         useEffect(() => {
-            axios.get('http://www.json-generator.com/api/json/get/bUaTfsZtBu?indent=2')
-        .then(res => {
-            console.log(res)
-            setEmployees(res.data.employees)
-        })
-        .catch(err => {
-            console.log(err)
-        })
+            fetch('http://www.json-generator.com/api/json/get/bUaTfsZtBu?indent=2')
+            .then(res => res.json())
+                .then(data => setEmployees(data.employees))
+
+
+        //     axios.get('http://www.json-generator.com/api/json/get/bUaTfsZtBu?indent=2')
+        // .then(res => {
+        //     console.log(res)
+        //     setEmployees(res.data.employees)
+        // })
+        // .catch(err => {
+        //     console.log(err)
+        // })
     },[])
      
     return (
