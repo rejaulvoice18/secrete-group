@@ -1,17 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
+//import PostData from './db.json';
 import axios from 'axios';
 import './Secrete.css'
 import Employee from '../Employee/Employee';
+import Summary from '../Summary/Summary';
 
 const Secrete = () => {
-    
     const [employee, setEmployees] = useState([]);
-    //https://randomuser.me/api/?results=50&nat=us,dk,fr,gb
-    useEffect(() => {
-        axios.get('https://randomuser.me/api/?results=50&nat=us,dk,fr,gb')
+    const [summary, setSummary] = useState([]);
+    const handleAddPerson = (employee) => {
+        console.log(employee)
+        const newSummary = [...summary, employee];
+        setSummary(newSummary);
+    }
+    
+        useEffect(() => {
+            axios.get('http://www.json-generator.com/api/json/get/bUaTfsZtBu?indent=2')
         .then(res => {
             console.log(res)
-            setEmployees(res.results)
+            setEmployees(res.data.employees)
         })
         .catch(err => {
             console.log(err)
@@ -22,11 +29,13 @@ const Secrete = () => {
         <div className="secrete-group-container">
             <div className="details-container">
                     {
-                    employee.map(single => <Employee employee={single}></Employee>)
+                    employee.map(single => <Employee 
+                        handleAddPerson={handleAddPerson}
+                        employee={single}></Employee>)
                     }
             </div>
             <div className="overview-container-cart">
-                <h4>Special publics details will be here</h4>
+                 <Summary summary={summary}></Summary>
             </div>
         </div>
     );
