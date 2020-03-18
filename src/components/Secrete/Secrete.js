@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react';
 //import axios from 'axios';
+//import fakeData from '../../fakeData';
 import './Secrete.css'
 import Employee from '../Employee/Employee';
 import Summary from '../Summary/Summary';
@@ -8,15 +9,15 @@ const Secrete = () => {
     const [employee, setEmployees] = useState([]);
     const [summary, setSummary] = useState([]);
     const handleAddPerson = (employee) => {
-        console.log(employee)
+        //console.log(employee)
         const newSummary = [...summary, employee];
         setSummary(newSummary);
     }
     
         useEffect(() => {
-            fetch('http://www.json-generator.com/api/json/get/bUaTfsZtBu?indent=2')
+            fetch('https://www.json-generator.com/api/json/get/bUaTfsZtBu?indent=2')
             .then(res => res.json())
-                .then(data => setEmployees(data.employees))
+            .then(data => setEmployees(data.employees))
 
 
         //     axios.get('http://www.json-generator.com/api/json/get/bUaTfsZtBu?indent=2')

@@ -9,7 +9,7 @@ const Summary = (props) => {
         const sum = summary[i];
         total = total + sum.salary;
     }
-    const ftotal = (total).toFixed(2);
+    const ftotal = (total).toFixed(2)
     return (
         <div>
             <h4 className="sumary-design">SICB Summary</h4>

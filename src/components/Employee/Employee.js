@@ -13,9 +13,6 @@ const Employee = (props) => {
                 <p>Sallary : ${salary}</p>
                 <button className="select-person-btn" onClick={() => props.handleAddPerson(props.employee)}>Select SICB Group</button>
             </div>
-            
-            
-            
         </div>
     );
 };
